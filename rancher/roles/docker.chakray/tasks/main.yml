@@ -1,0 +1,10 @@
+---
+- name: Install docker
+  import_tasks: docker_install.yml
+  tags:
+    - docker_install
+
+- name: docker user add
+  import_tasks: docker_user.yml
+  tags:
+    - user_add

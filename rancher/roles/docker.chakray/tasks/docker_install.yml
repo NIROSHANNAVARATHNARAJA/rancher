@@ -1,0 +1,30 @@
+# Install yum utils required for Docker
+- name: Install yum utils
+  yum:
+    name: "yum-utils"
+    state: present
+  become: yes
+
+# | Use below task to add repo directly from internet. |
+- name: Add the Docker repository
+  command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  become: yes
+
+# | podman buildah remove. |
+- name: Podman buildah remove
+  command: dnf remove podman buildah -y
+  become: yes
+
+- name: Install Docker CE packages
+  yum:
+    name: "{{  item  }}"
+    state: present
+  become: yes
+  loop: "{{  docker_packages  }}"
+
+- name: Enable Docker systemd service
+  service: 
+    name: docker
+    enabled: yes
+    state: started
+  become: yes

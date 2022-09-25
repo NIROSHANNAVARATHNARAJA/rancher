@@ -1,0 +1,7 @@
+- name: Pull Docker image for Rancher server
+  command: docker pull rancher/rancher:v2.6.5
+ 
+
+- name: Run docker image.
+  command: docker run -d --restart=unless-stopped -p 80:80 -p 443:443 -v /home/vagrant/<xxxxxxxx>.pem:/etc/rancher/ssl/cert.pem -v /home/vagrant/<xxxxxxxx>.key:/etc/rancher/ssl/key.pem --privileged rancher/rancher:v2.5.8 --no-cacerts
+ 

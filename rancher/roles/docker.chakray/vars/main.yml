@@ -1,0 +1,7 @@
+# Below packages will be installed with YUM repository.
+docker_packages:
+  - docker-ce-20.10.6
+  - docker-ce-cli-20.10.6
+  - containerd.io
+
+linux_user: vagrant

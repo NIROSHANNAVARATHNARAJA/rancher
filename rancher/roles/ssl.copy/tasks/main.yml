@@ -1,0 +1,13 @@
+- name: Change file ownership, group and permissions
+  ansible.builtin.file:
+    path: /home/vagrant/congowildcard.pem
+    owner: vagrant
+    group: vagrant
+    mode: '0644'
+
+- name: Change file ownership, group and permissions
+  ansible.builtin.file:
+    path: /home/vagrant/congocdkey.key
+    owner: vagrant
+    group: vagrant
+    mode: '0644'
