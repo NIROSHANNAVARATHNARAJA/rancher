@@ -8,5 +8,5 @@ Steps
 move to path rancher
 run vagrant up
 
-Rancher - https://<domain name>/
+Rancher - https://domain name/
 
